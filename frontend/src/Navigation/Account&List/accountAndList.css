@@ -1,0 +1,124 @@
+.AccountAndList{
+    margin-top: 20px;
+}
+/* General styles */
+.signInbox {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .signIn-headdingStyle {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  
+  .signIn-paraStyle {
+    font-size: 16px;
+    margin-bottom: 20px;
+  }
+  
+  .SigninLabel {
+    font-size: 16px;
+  }
+  
+  .signInboxInput {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+  }
+  
+  .signInboxBtn {
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .SigninHaddingh5 {
+    font-size: 14px;
+    margin-top: 10px;
+  }
+  
+  .createAccountbtnbox {
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  /* Responsive styles */
+  @media screen and (max-width: 500px) {
+    .signInbox {
+      max-width: 300px;
+    }
+  }
+  
+/*SIGN UP PAGES CSS */
+  /* General styles */
+.createAccountbox {
+    
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    margin-top: 10px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .createAccountboxHadding {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  
+  .createAccountbox2Label {
+    font-size: 16px;
+  }
+  
+  .createAccountboxInput {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+  }
+  
+  .createAccountbox2Btn {
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .createAccountboxPra {
+    font-size: 14px;
+    margin-top: 10px;
+    text-align: center;
+  }
+  
+  .createAccountboxPraBtn {
+    background: none;
+    border: none;
+    color: #007bff;
+    cursor: pointer;
+    text-decoration: none;
+
+  }
+  
+  /* Responsive styles */
+  @media screen and (max-width: 500px) {
+    .createAccountbox {
+      max-width: 300px;
+    }
+  }
+  
