@@ -1,0 +1,79 @@
+
+.clothes-navbar{
+     border: none;
+     display: flex;
+     justify-content: space-between;
+     opacity: 0.8;
+}
+.clothes-navbar-boxOne{
+  height: 70px;
+  width: 60%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  background-color: white;
+  
+  opacity: 0.5;
+  
+}
+.clothes-navbar-boxTwo{
+  height: 70px;
+  width:60%;
+  background-color: white; 
+   opacity: 0.5;
+}
+.clothes-catageries{
+      height: 40px;
+      width: 120px;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     border: 1px solid green;
+
+}
+.clothes-catageries:hover{
+  border: 3px solid  black;
+  
+}
+
+.clothes-navbar-link{
+  text-decoration: none;
+  color: black;
+  font-size: 1.2rem;
+  font-weight: 900;
+}
+.clothes-navbar-link:hover{
+  text-decoration: none;
+  color: green;
+  font-size: 1.2rem;
+  font-weight: 900;
+  
+}
+.pagination-conatiner{
+    height: 15vh;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+   
+
+}
+.pagination-btn{
+    height: 30px;
+    width: 100px;
+    background-color: black;
+    color: white;
+    border: none;
+    margin: 20px;
+}
+
+.parent{
+  height: 50vh;
+  width: 70vw;
+  border: 2px solid green;
+}
+.child{
+  height: 25vh;
+  width: 50vw;
+  border: 2px solid red;
+}

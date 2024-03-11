@@ -49,9 +49,22 @@
   }
   
   .createAccountbtnbox {
+    
     text-align: center;
     margin-top: 20px;
   }
+  .createAccountbtnbox-text{
+      color: black;
+      font-size: 1.2rem;
+      font-weight: 500;
+
+  }
+  .createAccountbtnbox-link{
+    color: #007bff;
+    text-decoration: none;
+
+  }
+  
   
   /* Responsive styles */
   @media screen and (max-width: 500px) {

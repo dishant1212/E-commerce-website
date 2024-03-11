@@ -19,7 +19,7 @@ function AddClothes() {
   const handleSubmit =async (e) => {
     e.preventDefault();
      const {imageUrl,name,price}=formData
-     const fetchData=await fetch("http://localhost:5000/add-clothes",{
+     const fetchData=await fetch("http://localhost:5000/clothes",{
             method:"POST",
             headers:{
                 "Content-Type":"application/json"

@@ -55,6 +55,7 @@ function SignUpPage() {
         Password: "",
         ReEnterPassword: ""
       });
+      navigate("/")
     } else {
       alert(resp.msg);
       setState({

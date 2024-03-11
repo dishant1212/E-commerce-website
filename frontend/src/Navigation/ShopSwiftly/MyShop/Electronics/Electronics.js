@@ -1,18 +1,31 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchData } from "../../../../redux/slices/electronicsSlice";
+import { addItem } from "../../../../redux/slices/cartSlice";
+import { useNavigate } from "react-router-dom";
 
 
 
 function Electronics(){
    
    const dispatch=useDispatch()
+   const navigate=useNavigate()
    const electronics=useSelector(state=>state.electronics)
+   const signInData=useSelector(state=>state.SignInData)
 
-   const addToCart=()=>{
+   const addToCart=(item)=>{
+    dispatch(addItem(item))
+}
 
-   }
-
+function proccedToBuyHandler(){
+  if(signInData.data){
+    alert("Congraculation Successfully Buy")
+  }else{
+    alert("Please Sign in")
+     navigate("/account-list")
+  
+  }
+}
    useEffect(()=>{
    dispatch(fetchData())
    },[])
@@ -26,9 +39,11 @@ function Electronics(){
               <img src={item.imageUrl} alt={item.name} className="cotainer-card-Image" />
               <div className="container-cart-Details">
                 <h3 className="container-cart-Details-headding">{item.name}</h3>
-                <p  className="container-cart-Details-para">Price: ${item.price}</p>
-                <button className="container-addToCart-Btn" onClick={() => addToCart(item.id)}>Add to Cart</button>
+                <p  className="container-cart-Details-para">Price:&#8377; {item.price}</p>
+                
               </div>
+              <button className="container-addToCart-addBtn" onClick={() => addToCart(item)}>Add to Cart</button>
+              <button className="container-addToCart-buyBtn" onClick={proccedToBuyHandler}>Buy</button>
             </div>
           ))}
         </div>

@@ -1,15 +1,22 @@
 import "./accountAndList.css"
 import { Link, useNavigate } from "react-router-dom";
-import { useState } from "react";
+import { useState,useEffect } from "react";
+import {useDispatch,useSelector} from "react-redux";
+ import { signInData } from "../../redux/slices/signInDataSlice";
+
 
 
  
  //sign-in Page
  function SignInPage(){
+
    const [state,setState] = useState({
     Email:"",
     Password:""
    })
+   const [Data,setSignInData]=useState()
+   const navigate=useNavigate()
+   const dispatch=useDispatch()
 
    const inputHandler=(e)=>{
        const {value,name}=e.target
@@ -29,27 +36,38 @@ import { useState } from "react";
     })
   })
     const resp=await fecthData.json(fecthData)
-    if(resp){
-      console.log(resp)
-      alert(resp.data.msg)
-      setState({
-        Email:"",
-        Password:""
-       })
+      if(resp){
+        if(resp.msg=="Password didn't match"  || resp.msg=="Invalid Credentials" ){
+          alert(resp.msg)
+          setState({
+            Email:"",
+            Password:""
+           })
+        }else{
+          
+         alert( resp.data.msg)
+         setSignInData(resp.data.checkUser)
+         setState({
+          Email:"",
+          Password:""
+         })
+        //  navigate("/")
 
-    }else{
-      // console.log(resp)
-       alert(resp.msg)
-       setState({
-        Email:"",
-        Password:""
-       })
-    } 
-    setState({
-    Email:"",
-    Password:""
-   })
+        }
+         
+      }else{
+        alert("something went wrong !")
+        setState({
+          Email:"",
+          Password:""
+         })
+      }
+
    }
+
+   useEffect(()=>{
+       dispatch(signInData(Data))
+   },[Data])
    
     return(
         <>
@@ -69,7 +87,8 @@ import { useState } from "react";
         </div>
         
           <div className="createAccountbtnbox">
-      <Link to="/sign-up">Create your ShopSwiftly account</Link>
+          <span className="createAccountbtnbox-text">Create your ShopSwiftly account ?  </span>
+             <Link to="/sign-up" className="createAccountbtnbox-link" >Sign up</Link>
 
           </div>
         </>

@@ -1,50 +1,87 @@
 import { Link, Outlet } from "react-router-dom";
 import "./Navigation.css"
+import { useSelector } from "react-redux"
+import { useState } from "react";
+
+
 function Navigation() {
-
-
+   const [menueBtn,setMenuBtn]=useState(false)
+    const cartProducts = useSelector(state => state.cart)
 
     return (
         <>
-            <div className="navigation">
-                <div className="navigation-shopswiftly border" >
-                    <Link className="navigation-link" to="/">ShopSwiftly</Link>
-
+            <div className="navbar">
+                <div className="navbar-top">
+                         <div>
+                         <i class="ri-phone-line"></i> 423-943-2772 / <i class="ri-mail-line"></i> ShopSwiftly@gmail.com
+                         </div>
+                         
+                         <div className="navbar-accountdetails">
+                         <Link  className="navbar-top-link" to="/">HOME</Link>
+                            
+                        <Link className="navbar-top-link" to="/account-list"> MY ACCOUNT</Link>
+                    
+                            <div>ABOUT US</div>
+                            <div>LOGIN</div>
+                         </div>
+                         
+                         
                 </div>
+                {/* <div className="navbar-center">
+                      YOU  ARE  $100.00  AWAY  FROM  DELIVERY
+                </div> */}
 
-                <div className="navigation-search">
-                    <Link className="navigation-link" to="/search">
-                        <div className="nav-search">
-                            <select className="search-select">
-                                <option>All</option>
-                            </select  >
-                            <input placeholder="Search Amazon" className="search-input" />
-                            <div className="seacrh-icon">
-                                <i className="fa-solid fa-magnifying-glass"></i>
-                            </div>
+                <div className="navbar-bottom">
+
+                         {/* <div className="navbar-search">
+                            <input  type="search" placeholder="Search shopSwiftly" className="search-input" />
+                        </div> */}
+                         <i class="ri-menu-2-line menuebtn" onClick={()=>setMenuBtn(true)}></i>
+                          {
+                            menueBtn && (<>
+
+                              <div className="modal-navbar">
+                         <div>
+                         <i class="ri-phone-line"></i> 423-943-2772 / <i class="ri-mail-line"></i> ShopSwiftly@gmail.com
+                         </div>
+                         
+                         <div className="navbar-accountdetails">
+                         <Link  className="navbar-top-link" to="/">HOME</Link>
+                            
+                        <Link className="navbar-top-link" to="/account-list"> MY ACCOUNT</Link>
+                    
+                            <div>ABOUT US</div>
+                            <div>LOGIN</div>
+                            <button onClick={()=>setMenuBtn(false)}>
+                                <i class="ri-close-fill"></i>
+                                </button>
+                         </div>
+                         
+                         
+               
+
+                              </div>
+                            </>)
+                          }
+                         <div className="navbar-logo" >
+                           Shop Swiftly
                         </div>
-                    </Link>
-                </div>
-                <div className="navigation-account-cart">
-                    <div className="navigation-account border">
-                        <Link className="navigation-link" to="/account-list">
-                                <p><span>Hello, sign in</span></p>
-                                <p className="nav-second">Account & Lists</p>
+                        
+                       
+                        <Link className="navbar-bottom-link" to="/cart">
+                            {/* <span className="cartCount">{cartProducts.length}</span> */}
+                        <i class="ri-shopping-cart-line" ></i>
+                        Cart</Link>
+
+                        
                            
-                        </Link>
-                    </div>
-                    <div className="navigation-cart border" >
-                        <Link className="navigation-link" to="/cart">Cart</Link>
-                    </div>
-                </div>
+                         </div>
+               
 
             </div>
             <Outlet />
         </>
     )
-
-
-
 }
 
 export default Navigation;

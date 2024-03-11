@@ -1,23 +1,24 @@
-import { Fragment } from "react";
+import { useNavigate } from "react-router-dom";
 import "./ShopSwiftyPage.css";
 import { Link ,Outlet} from "react-router-dom";
 
+
 function ShopSwiftlyPage() {
+  
+ 
+  
 
   return (
     <>
     <div  className="ShopSwiftly-Container">
-      <header>
+      
 
-        <div class="hero-section">
+        <div class="top-section">
           <div class="hero-msg">
             <p > you are on ShopSwiftly.com ,you can also shop on ShopSwift India for millions of products with fast local delivery </p>
           </div>
 
         </div>
-
-
-      </header>
 
       <main>
 
@@ -37,7 +38,7 @@ function ShopSwiftlyPage() {
           <div className=" box">
 
             <div className="box-content">
-              <h2>Health & Personal Care</h2>
+              <h2>Health Care</h2>
               <div className="HealthPersonalCare box-img">
                 <div className="shop-section-content">
                 <Link to="/Health-Personal-Care" className="shop-section-link" > See more</Link>
@@ -93,10 +94,10 @@ function ShopSwiftlyPage() {
           </div>
           <div className="box">
             <div className="box-content">
-              <h2>New Arrival in Tours</h2>
-              <div className="NewArrivalInTous box-img" >
+              <h2>Fitness</h2>
+              <div className="StartYourFitnessJourney box-img" >
                 <div className="shop-section-content">
-                <Link to="/New-Arrival-In-Tours" className="shop-section-link">See more</Link>
+                <Link to="/Start-your-fitness-journey" className="shop-section-link">See more</Link>
                 </div>
               </div>
 
@@ -105,7 +106,7 @@ function ShopSwiftlyPage() {
           </div>
           <div className="box">
             <div className="box-content">
-              <h2>Discover Fashion Trends</h2>
+              <h2>Fashion Trends</h2>
               <div className="DiscoverFashionTrends box-img" >
                 <div className="shop-section-content">
                 <Link to="/Discover-Fashion-Trends" className="shop-section-link">See more</Link>
@@ -130,7 +131,7 @@ function ShopSwiftlyPage() {
       </main>
       <footer>
         <div class="foot-panel1">
-          Back to Top
+         {/* <button onClick={backToTopHandler}>Back to Top</button>  */}
         </div>
         <div class="foot-panel2">
           <ul>

@@ -19,7 +19,7 @@ function AddElectronics() {
   const handleSubmit =async (e) => {
     e.preventDefault();
      const {imageUrl,name,price}=formData
-     const fetchData=await fetch("http://localhost:5000/add-electronics",{
+     const fetchData=await fetch("http://localhost:5000/electronics",{
             method:"POST",
             headers:{
                 "Content-Type":"application/json"

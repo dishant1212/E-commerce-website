@@ -1,7 +1,7 @@
 import {createSlice,createAsyncThunk} from "@reduxjs/toolkit"
 
 export  const fetchData=createAsyncThunk("cloth/get", async ()=>{
-      const clothes=await fetch("http://localhost:5000/add-clothes")
+      const clothes=await fetch("http://localhost:5000/clothes")
       const resp=clothes.json()
       return resp
 })
