@@ -16,7 +16,7 @@ function WomenClothes(){
       alert("Congraculation Successfully Buy")
     }else{
       alert("Please Sign in")
-       navigate("/account-list")
+       navigate("/login")
     
     }
   }

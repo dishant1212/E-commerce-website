@@ -35,12 +35,16 @@
 }
 .navbar-logo{
   
-  text-transform: uppercase;
+
   text-decoration: solid;
   color: white;
-  font-size: 2vw;
+  font-size: 3vw;
   font-weight: 550;
   text-shadow: 2px 2px blue;
+}
+.navbar-logo-link{
+  text-decoration: none;
+  color: white;
 }
 .search-input{
    font-size: 2vw;
@@ -74,38 +78,18 @@
   width: 5vw;
   border: 2px solid black
 }
-
-@media (max-width:600px){
-   .navbar{
-     height: 7vh
-   }
-    .navbar-top{
-           display: none;
-    }
-    .navbar-bottom{
-      height: 8vh;
-      background-color: rgb(24, 23, 23);
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      
-      
-    }
-    .navbar-bottom-link{
-      display: none;
-    }
-    .navbar-logo{
-      font-size: 5vw;
-      margin-right:35vw;
-     
-    }
-    .menuebtn{
-      display: block;
-      color: white;
-      font-size: 5vw;
-      font-weight: 500; 
-     
-
-    }
-
+.cartCount{
+  color: white;
+  position: absolute;
+  top: 83px;
+  right: 6vw;
+  font-size: 1vw;
 }
+.cartIcon{
+  font-size: 3vw;
+}
+
+/* @media (max-width:600px){
+   
+
+} */

@@ -21,7 +21,9 @@ function AdminPanel(){
          <div>
                    <Link className="adminPanel-link" to="/admin-panel/add-clothes-women">AddWomenClothes</Link> 
          </div>
-         
+         <div>
+            <Link className="adminPanel-link" to="/admin-panel/add-clothes-kids">AddKidsClothes</Link>
+         </div>
            <div>
             <Link className="adminPanel-link" to="/admin-panel/add-electronics" >AddElectronics</Link>
             </div>

@@ -3,7 +3,7 @@ import "./accountAndList.css"
 import SignInPage from "./SignInPage"
 
 
-function AccountAndList(){
+function Login(){
 
 
 return(
@@ -15,4 +15,4 @@ return(
 
     
 }
-export default AccountAndList
+export default Login

@@ -1,0 +1,33 @@
+.about-us-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  h1, h2 {
+    color: #333;
+  }
+  
+  .content {
+    line-height: 1.6;
+  }
+  
+  .content p {
+    margin-bottom: 20px;
+  }
+  
+  ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .thank-you {
+    font-style: italic;
+  }
+  
+  @media (max-width: 600px) {
+    .about-us-container {
+      padding: 10px;
+    }
+  }
+  

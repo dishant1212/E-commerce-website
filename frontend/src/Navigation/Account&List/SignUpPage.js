@@ -55,7 +55,10 @@ function SignUpPage() {
         Password: "",
         ReEnterPassword: ""
       });
-      navigate("/")
+      if(resp.msg=="user created successfull"){
+             navigate("/")
+      }
+      
     } else {
       alert(resp.msg);
       setState({

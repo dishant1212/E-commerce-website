@@ -14,6 +14,7 @@ import SignInDataSlice from "./slices/signInDataSlice";
 import CartItemIncressDecress from "./slices/cartItemIncressDecress";
 import menClothesSlice from "./slices/menClothesSlice";
 import  WomenClothesSlice from './slices/womenClotheSlice'
+import KidsClothSlice from "./slices/kidsClothesSlice"
 
 
 const store=configureStore({
@@ -31,7 +32,8 @@ const store=configureStore({
         SignInData:SignInDataSlice,
         CartItemIncressDecressCount:CartItemIncressDecress,
         MenClothes:menClothesSlice,
-        WomenClothes: WomenClothesSlice
+        WomenClothes: WomenClothesSlice,
+        KidsClothes:KidsClothSlice
      }
 })
 

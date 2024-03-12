@@ -23,7 +23,9 @@ const {signUpHandler,
     addMenClothesHandler,
     getMenClothesHandler,
     addWomenClothesHandler,
-    getWomenClothesHandler} = require("../controller/controller")
+    getWomenClothesHandler,
+    addKidsClothHandler,
+    getKidsClothHandler} = require("../controller/controller")
 
 
 
@@ -78,5 +80,9 @@ router.route("/cloth-men")
 router.route("/cloth-women")
 .post(addWomenClothesHandler)
 .get(getWomenClothesHandler)
+
+router.route("/cloth-kids")
+.post(addKidsClothHandler)
+.get(getKidsClothHandler)
 
 module.exports=router

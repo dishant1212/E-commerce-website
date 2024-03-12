@@ -12,7 +12,7 @@ h2{
   }
   
   .container-card{
-    height: 400px;
+    height: 450px;
     width: 300px;
     margin: 20px;
     padding: 10px;
@@ -22,14 +22,16 @@ h2{
   }
   
   .cotainer-card-Image{
-    height: 250px;
-    width: 95%;
+    height: 310px;
+    width: 90%;
     
     border-radius: 8px;
   }
   
   .container-cart-Details{
-    height: 110px;
+    
+    height: 100px;
+    text-align: center;
     width: 100%;
   }
   
@@ -48,7 +50,7 @@ h2{
   }
   .container-card-btn{
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-between;
     align-items: center;
   }
   .container-addToCart-addBtn{

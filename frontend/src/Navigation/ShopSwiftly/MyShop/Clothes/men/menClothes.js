@@ -23,7 +23,7 @@ function proccedToBuyHandler(){
     alert("Congraculation Successfully Buy")
   }else{
     alert("Please Sign in")
-     navigate("/account-list")
+     navigate("/account")
   
   }
 }
@@ -36,9 +36,7 @@ function proccedToBuyHandler(){
 
 return(
     <>
-   <div style={{height:"60vh",width:"100%" ,backgroundImage:`url(${"https://m.media-amazon.com/images/S/al-eu-726f4d26-7fdb/7448c89d-c754-4be0-8ecc-7012a78193d1._CR0%2C0%2C3000%2C600_SX1500_.jpg"})` ,backgroundSize:"cover"}}>
-
-   </div>
+   
     <div className="container">
        
           {menCloth.data.map(item => (

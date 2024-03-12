@@ -25,7 +25,7 @@ function proccedToBuyHandler(){
     alert("Congraculation Successfully Buy")
   }else{
     alert("Please Sign in")
-     navigate("/account-list")
+     navigate("/login")
   
   }
 }
@@ -46,8 +46,10 @@ function proccedToBuyHandler(){
                 <p  className="container-cart-Details-para">Price:&#8377; {item.price}</p>
                 
               </div>
+              <div className="container-card-btn">
               <button className="container-addToCart-addBtn" onClick={() => addToCart(item)}>Add to Cart</button>
               <button className="container-addToCart-buyBtn" onClick={proccedToBuyHandler}>Buy</button>
+              </div>
             </div>
           ))}
         </div>

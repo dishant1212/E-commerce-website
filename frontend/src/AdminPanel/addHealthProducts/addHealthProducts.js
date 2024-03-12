@@ -18,8 +18,8 @@ function AddHeathProducts() {
 
   const handleSubmit =async (e) => {
     e.preventDefault();
-     const {imageUrl,name,price}=formData
-     const fetchData=await fetch("http://localhost:5000/add-healthProducts",{
+    const {imageUrl,name,price}=formData
+     const fetchData=await fetch("http://localhost:5000/healthProducts",{
             method:"POST",
             headers:{
                 "Content-Type":"application/json"
@@ -73,7 +73,7 @@ function AddHeathProducts() {
             required 
           />
         </div>
-        <button type="submit">Add Electronics</button>
+        <button type="submit">Add HealthProducts</button>
       </form>
     </div>
   );

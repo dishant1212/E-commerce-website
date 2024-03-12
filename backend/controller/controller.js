@@ -1,3 +1,4 @@
+const bcrypt=require("bcryptjs")
 const User = require("../model/user")
 const Cloth = require("../model/addClothes")
 const Electronic = require("../model/addElectronics")
@@ -10,6 +11,8 @@ const PetCareProducts = require("../model/addPetCare")
 const FitnessProducts=require("../model/addFitnessProducts")
 const MenCloth=require("../model/addMenClothes")
 const WomenCloth=require("../model/addWomenClothes")
+const KidsCloth=require("../model/addKidsClothes")
+
 
 
 async function signUpHandler(req, res) {
@@ -25,25 +28,40 @@ async function signUpHandler(req, res) {
   ) {
     return res.status(404).json({ msg: "all faild required" })
   }
-  await User.create({ YourName, MobileNumber, Email, Password, ReEnterPassword })
+  try{
+    const user=await User.findOne({Email})
+    if(user){
+     return res.send({msg:"User Already Exits"})
+    }else{
+       const createUser= await User.create({ YourName, MobileNumber, Email, Password, ReEnterPassword })
+         await createUser.save();
+        return res.status(201).json({ msg: "user created successfull" })
+    }
+    
+  }catch(error){
+     console.log(error)
+  }
 
-  return res.status(201).json({ msg: "user created successfull" })
+  
 }
 
 async function signInHandler(req, res) {
   const { Email, Password } = req.body
   const checkUser = await User.findOne({ Email })
   if (checkUser) {
-    if (Password == checkUser.Password) {
-      res.send({
-        data: {
-          msg: "Login Successfully",
-          checkUser
+        const user=await bcrypt.compare(Password,checkUser.Password)
+        console.log(user)
+        if(user){
+          res.status(200).send({
+                 data: {
+                   msg: "Login Successfully",
+                    checkUser
+                  }
+                 })
+        }else{
+          res.send({msg: "Password didn't match" })
         }
-      })
-    } else {
-      res.send({msg: "Password didn't match" })
-    }
+  
   } else {
     res.status(404).send({ msg: "Invalid Credentials" });
   }
@@ -242,6 +260,16 @@ async function getWomenClothesHandler(req,res){
          return res.status(200).send(getWomenClothes)
 }
 
+async function addKidsClothHandler(req,res){
+   const {imageUrl,name,price}=req.body
+   const kidsCloths=await KidsCloth.create({imageUrl,name,price})
+   return res.status(201).send({msg:"Kids clothes added Successfull"})
+}
+async function getKidsClothHandler(req,res){
+   const getKidsCloth=await KidsCloth.find({})
+   return res.status(200).send(getKidsCloth)
+}
+
 module.exports = {
 
   signUpHandler,
@@ -267,5 +295,7 @@ module.exports = {
   addMenClothesHandler,
   getMenClothesHandler,
   addWomenClothesHandler,
-  getWomenClothesHandler
+  getWomenClothesHandler,
+  addKidsClothHandler,
+  getKidsClothHandler
 }

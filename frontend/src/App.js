@@ -15,7 +15,7 @@ import PetCare from "./Navigation/ShopSwiftly/MyShop/PetCare/PetCare";
 import Grocery from "./Navigation/ShopSwiftly/MyShop/Grocery/Grocery";
 
 import Navigation from "./Navigation/Navigation";
-import AccountAndList from "./Navigation/Account&List/accountAndList";
+import Login from "./Navigation/Account&List/accountAndList";
 import Cart from "./Navigation/Cart/cart";
 import SearchTo from "./Navigation/SearchTo/SearchTo";
 import SignUpPage from "./Navigation/Account&List/SignUpPage";
@@ -35,6 +35,10 @@ import WomenClothes from "./Navigation/ShopSwiftly/MyShop/Clothes/women/womenClo
 import KidsClothes from "./Navigation/ShopSwiftly/MyShop/Clothes/KIds/kidsClothes";
 import AddMenClothes from "./AdminPanel/addClothes/addMenClothes";
 import AddWomenClothes from "./AdminPanel/addClothes/addWomenClothes";
+import MyAccountPage from "./Navigation/Account&List/MyAccount";
+import AddKidsClothes from "./AdminPanel/addClothes/addKidsClothes";
+import ClothesHomePage from "./Navigation/ShopSwiftly/MyShop/Clothes/clothesHomePage/clothesHomePage";
+import AboutUsPage from "./Navigation/AboutUs/AboutUsPage";
 
 
 
@@ -56,10 +60,7 @@ function App() {
             
         <Route path="/" element={<Navigation/>}>
             <Route path="/" exact element={<ShopSwiftlyPage/>} />
-            <Route path="/clothes" element={<Clothes/>}/>
-            <Route path="/men-clothes" element={<MenClothes/>}/>
-              <Route path="/women-clothes" element={<WomenClothes/>} />
-              <Route path="/kids-clothes" element={<KidsClothes/>}/>
+            <Route path="/account" element={<MyAccountPage/>}/>
             <Route path="/Health-Personal-Care" element={<HealthPersonalCare/>}/>
             <Route path="/Furniture" element={<Furniture/>} />
             <Route path="/Beauty-Picks" element={<BeautyPicks/>}/>
@@ -69,17 +70,25 @@ function App() {
             <Route path="Electronics" element={<Electronics/>}/>
             <Route path="/Grocery" element={<Grocery/>}/>
             <Route path="/search" element={<SearchTo/>} />
-            <Route path="/account-list"  element={<AccountAndList/>}/>
+            <Route path="/login"  element={<Login/>}/>
             <Route path="/sign-up" element={<SignUpPage/>}/>
             <Route path="/cart" element={<Cart/>} />
-            
+            <Route path="/aboutUs" element={<AboutUsPage/>}/>
+            <Route path="/clothes" element={<Clothes/>}>
+              <Route path="/clothes" element={<ClothesHomePage/>}/>
+               <Route path="/clothes/men-clothes" element={<MenClothes/>}/>
+              <Route path="/clothes/women-clothes" element={<WomenClothes/>} />
+              <Route path="/clothes/kids-clothes" element={<KidsClothes/>}/>
+            </Route>
         </Route> 
+        
             
 
         <Route path="/admin-panel" element={<AdminPanel/>}>
         <Route  path="/admin-panel/add-clothes" element={<AddClothes/>}/>
         <Route path="/admin-panel/add-clothes-men" element={<AddMenClothes/>}/>
         <Route path="/admin-panel/add-clothes-women" element={<AddWomenClothes/>}/>
+        <Route path="/admin-panel/add-clothes-kids" element={<AddKidsClothes/>}/>
         <Route path="/admin-panel/add-electronics" element={<AddElectronics/>}/>
         <Route  path="/admin-panel/add-health-products" element={<AddHeathProducts/>}/>
         <Route  path="/admin-panel/add-petcare-products" element={<AddPetCare/>}/> 
