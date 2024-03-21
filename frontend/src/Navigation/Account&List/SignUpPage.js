@@ -44,9 +44,9 @@ function SignUpPage() {
       })
     })
     const resp = await fetchData.json();
-
+  console.log(resp)
     if (resp) {
-      
+        
       alert(resp.msg);
       setState({
         YourName: "",
@@ -75,7 +75,7 @@ function SignUpPage() {
   };
 
   const backToLoginHandler=() => {
-    navigate("/account-list")
+    navigate("/login")
   }
 
   return (

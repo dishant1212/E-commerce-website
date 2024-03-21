@@ -2,6 +2,8 @@ import React from 'react';
 import "./AboutUsPage.css"
 
 const AboutUsPage = () => {
+
+  
   return (
     <div className="about-us-container">
       <h1>About Us</h1>

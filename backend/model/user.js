@@ -1,6 +1,7 @@
 const mongoose=require("mongoose")
 const bcrypt=require("bcryptjs")
 
+
 const UserSchema= new mongoose.Schema({
           YourName:{
             type:String,
@@ -28,6 +29,7 @@ const UserSchema= new mongoose.Schema({
 })
 
 
+
 UserSchema.pre("save",async function(next){
   
     if(!this.isModified("Password")){
@@ -36,6 +38,7 @@ UserSchema.pre("save",async function(next){
     }
   next()
 })
+
 
 
 const User=mongoose.model("user",UserSchema)

@@ -1,4 +1,5 @@
 const bcrypt=require("bcryptjs")
+const {setUser,getUser}=require("../service/auth")
 const User = require("../model/user")
 const Cloth = require("../model/addClothes")
 const Electronic = require("../model/addElectronics")
@@ -19,23 +20,21 @@ async function signUpHandler(req, res) {
 
   const { YourName, MobileNumber, Email, Password, ReEnterPassword } = req.body
 
-  if (!req.body ||
-    !YourName ||
-    !MobileNumber ||
-    !Email ||
-    !Password ||
-    !ReEnterPassword
-  ) {
-    return res.status(404).json({ msg: "all faild required" })
-  }
   try{
     const user=await User.findOne({Email})
-    if(user){
-     return res.send({msg:"User Already Exits"})
-    }else{
-       const createUser= await User.create({ YourName, MobileNumber, Email, Password, ReEnterPassword })
+    if(!user){
+      
+      const createUser= await User.create({ YourName, MobileNumber, Email, Password, ReEnterPassword })
          await createUser.save();
-        return res.status(201).json({ msg: "user created successfull" })
+         
+        if(createUser){
+          const token=setUser(createUser);
+          return res.status(201).send({ msg: "user created successfull",token:token})
+        }
+        
+    
+    }else{
+        return res.send({msg:"User Already Exits"})
     }
     
   }catch(error){
@@ -50,14 +49,18 @@ async function signInHandler(req, res) {
   const checkUser = await User.findOne({ Email })
   if (checkUser) {
         const user=await bcrypt.compare(Password,checkUser.Password)
-        console.log(user)
+        
         if(user){
+          const token=setUser(checkUser)
           res.status(200).send({
                  data: {
                    msg: "Login Successfully",
-                    checkUser
+                     checkUser,
+                      token:token
                   }
                  })
+              
+           
         }else{
           res.send({msg: "Password didn't match" })
         }

@@ -17,6 +17,7 @@ function BeautyPicks(){
   
 
    const addToCart=(item)=>{
+     
         UseDispatch(addItem(item))
    }
 
@@ -29,7 +30,7 @@ function BeautyPicks(){
       alert("Congraculation Successfully Buy")
     }else{
       alert("Please Sign in")
-       navigate("/account-list")
+       navigate("/login")
     
     }
 }

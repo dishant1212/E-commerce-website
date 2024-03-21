@@ -1,6 +1,6 @@
 
 .cart-container{
-   
+    height: calc(100% -58vh);
     padding: 20px;
    
     font-size: 2rem;

@@ -14,6 +14,7 @@ import {useDispatch,useSelector} from "react-redux";
     Email:"",
     Password:""
    })
+   const {Email,Password}=state
    const [Data,setSignInData]=useState()
    const navigate=useNavigate()
    const dispatch=useDispatch()
@@ -36,6 +37,7 @@ import {useDispatch,useSelector} from "react-redux";
     })
   })
     const resp=await fecthData.json(fecthData)
+    console.log(resp)
       if(resp){
         if(resp.msg=="Password didn't match"  || resp.msg=="Invalid Credentials" ){
           alert(resp.msg)
@@ -51,7 +53,6 @@ import {useDispatch,useSelector} from "react-redux";
           Email:"",
           Password:""
          })
-        //  navigate("/")
 
         }
          
@@ -77,9 +78,9 @@ import {useDispatch,useSelector} from "react-redux";
          <p className="signIn-paraStyle">Sign In with your email and password</p>
             <from action="signIn"  >
              <lable className="SigninLabel" >Email</lable><br/>
-             <input className="signInboxInput" type="text" name="Email" onChange={inputHandler} /><br/>
+             <input className="signInboxInput" type="text" name="Email" onChange={inputHandler} value={Email} /><br/>
              <lable className="SigninLabel" >Password</lable><br/>
-             <input className="signInboxInput" type="password" name="Password" onChange={inputHandler}/><br/>
+             <input className="signInboxInput" type="password" name="Password" onChange={inputHandler} value={Password}/><br/>
              <button className="signInboxBtn" onClick={(e)=>ContinueFunc(e)}>Continue</button>
 
              </from>

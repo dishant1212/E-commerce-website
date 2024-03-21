@@ -1,34 +1,63 @@
 .navbar{
-  height: 20vh;
+  height: 16vh;
+ width: 100%;
+  color: white;
+  
+  display: flex;
+  flex-direction: column;
+ 
 
-  border-top: 3px solid black;
 }
 .navbar-top{
-   height: 4vh;
-   display: flex;
-   justify-content: space-between;
-   align-items: center;
-   padding: 10px;
-   top: 0px;
-   font-size: 18px
+  height: 40%;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: black;
+
 }
 .navbar-accountdetails{
   display: flex;
   justify-content: space-evenly;
   gap: 4vw;
+  color: white;
+  margin-right: 2vw;
+  
   
 }
+.social-media-details{
+  width: 22vw;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 
-.navbar-bottom{
-   height: 13vh;
-   background-color: rgb(24, 23, 23);
-   display: flex;
-   justify-content: space-between;
-   align-items: center;
   
-   font-size: 2vw;
-   padding-left: 1vw;
-   padding-right: 1vw;
+}
+.navbar-bottom{
+  height: 65%;
+  width: 100%;
+  display: flex;
+ justify-content: center;
+ align-items: center;
+ background-color: white;
+ 
+ 
+ 
+
+}
+.name-cart-navbar{
+  height: 10vh;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #eee;
+  font-weight: 600;
+  opacity: 0.8;
+  padding-left: 10px;
+  padding-right:5px ;
+  
 }
 .menuebtn{
   display:none;
@@ -40,53 +69,55 @@
   color: white;
   font-size: 3vw;
   font-weight: 550;
-  text-shadow: 2px 2px blue;
+
 }
-.navbar-logo-link{
+.logo-link{
   text-decoration: none;
-  color: white;
-}
-.search-input{
-   font-size: 2vw;
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  
 }
 .navbar-top-link{
   text-decoration: none;
-  color: black;
-  
-}
-.navbar-top-link:hover{
- 
-  border-bottom: 1px solid black;
-
-}
-.navbar-bottom-link{
-  text-decoration: none;
   color: white;
   
 }
-.navbar-bottom-link:hover{
+ .shopStyle{
+  color: black ;
+  font-size: 2.3rem;
+  font-weight: 600;
+  font-family: "Bodoni MT", Didot, "Didot LT STD", "Book Antiqua", Garamond, "Times New Roman", serif;
+}
+.swiftlyStyle{
+    color: black;
+    font-size: 2.3rem;
+    font-weight: 600;
+    font-family: "Bodoni MT", Didot, "Didot LT STD", "Book Antiqua", Garamond, "Times New Roman", serif;
+
+} 
+.navbar-top-link:hover{
  
   border-bottom: 1px solid white;
 
 }
-.modal-navbar{
-  display: flex;
-  flex-direction:column;
-  justify-content: space-between;
-  align-items: center;
-  height: 8vh;
-  width: 5vw;
-  border: 2px solid black
+.cart-link{
+  text-decoration: none;
+  color: black;
+  font-size: 2rem;
+
+  
+  
 }
+
 .cartCount{
-  color: white;
-  position: absolute;
-  top: 83px;
-  right: 6vw;
-  font-size: 1vw;
+  font-size: 1rem;
+ position: relative;
+
+ right: 26px;
+ bottom: 11px;
 }
 .cartIcon{
-  font-size: 3vw;
+  font-size: 2.6rem;
+ 
 }
 
 /* @media (max-width:600px){

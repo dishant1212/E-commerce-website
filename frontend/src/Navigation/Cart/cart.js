@@ -27,7 +27,7 @@ function Cart() {
          }else{
           console.log("else",signInData.data)
           alert("Please Sign In")
-            navigate("/account-list")
+            navigate("/login")
          
          }
   }
@@ -63,12 +63,12 @@ function Cart() {
                     </div>
 
 
-                    <div className="addMinusQuanity">
+                   {/*  <div className="addMinusQuanity">
                       <span className="spanStyle" onClick={()=>dispatch(itemIncress())}>+</span>
                       <input className="minusQuanityInput" readOnly value={IncressDecressCount} />
                       <span className="spanStyle" onClick={()=>dispatch(itemDecress())}>-</span><br />
                     </div>
-
+                      */}
                     <div className="productPrice">
                       <div>&#8377; {item.price}</div>
 

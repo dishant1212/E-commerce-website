@@ -1,3 +1,4 @@
+import {Link} from "react-router-dom";
 import React, { useState } from 'react';
 import { UseSelector, useSelector } from 'react-redux';
 
@@ -30,7 +31,7 @@ const MyAccountPage = () => {
       <div className='account-list'>MY WACHLIST</div>
       <div className='account-list'>CHANGE PASSWORD</div>
       {
-        accountData ? (<><div className='account-list'>LOGOUT</div></>) :(<><div className='account-list'>LOGIN</div></>)
+        accountData ? (<><div className='account-list'>LOGOUT</div></>) :(<><div className='account-list'><Link to="/login" className="account-list-login">LOGIN</Link></div></>)
       }
 
 

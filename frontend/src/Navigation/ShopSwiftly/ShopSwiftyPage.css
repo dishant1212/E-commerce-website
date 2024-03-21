@@ -1,33 +1,71 @@
-
-.top-section{
-  height: 70vh;
+main{
+  height: calc(100% - 68vh);
   width: 100%;
-  background-image: url("./Image/hero_image.jpg");
-  background-size: cover;
   display: flex;
- justify-content: center;
- align-items: flex-end;
-
+  flex-direction: column;
 }
-.hero-msg{
+
+
+.top-panel{
   background-color: white;
   color: black;
-  height: 40px;
-  width: 80%;
+  height: 83vh;
+  width: 100%;
+  background-image: url("https://assets.justinmind.com/wp-content/uploads/2019/08/ecommerce-website-design.png");
+  background-size: cover;
+  margin-bottom: 15px;
   display: flex;
-  align-items: center;
+  flex-direction: column;
+   justify-content: space-evenly; 
+ align-items:center;
+ opacity: 0.8;
+
+  
+
+}
+.top-panel-text1{
+  height: 5vh;
+  width: 55%;
+  /* background-color: white; */
+  color:black ;
+  text-shadow: 2px 2px white;
+  padding: 20px;
+  font-size: 2rem;
+  margin-right:40vw;
+  display: flex;
+  flex-direction: column;
+  gap: 2vh;
+
+}
+.top-panel-text2{
+  height: 4vh;
+  width: 90%;
+  color: white;
+   background-color: black;
+   text-shadow: 2px 2px black;
+   padding: 20px;
+   font-size: 1.5vw;
+   margin-top: 300px;
+   text-align: center;
+   opacity: 1;
+}
+
+.logo{
+  height: 10vh;
+  width: 16vw;
+   background-image: url("./Image/logo.jpg");
+   background-size: cover;
+   cursor: pointer;
+}
+.shop-text{
+  height:70vh ;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
   justify-content: center;
-  position: relative;
-  bottom: 25px;
-  margin-bottom: 25px;
-  font-size: 1.2rem;
-  padding: 10px;
-
+  align-items: end;
+ 
 }
-.hero-msg a {
-  color: #007185;
-}
-
 
 /*shop section*/
 
@@ -104,18 +142,20 @@
 
 
 .shop-section{
+  
   display: flex;
-  flex-wrap:wrap;
   justify-content: space-evenly;
+  flex-wrap:wrap;
+ 
   background-color: #e2e7e6;
 }
 .box {
  
   height: 400px;
-  width: 23%;
+  width: 400px;
   background-color: white;
   padding: 20px 0px 15px;
-  margin: 15px;
+  margin: 5px;
 
 }
 
@@ -129,54 +169,42 @@
 }
 /**footer**/
 footer{
+  height: 50vh;
   margin-top: 15px;
 }
-.foot-panel1 {
-  background-color: #37475a;
-  color: white;
-  height: 50px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 0.85rem;
-}
+
 .foot-panel2{
+  height: 80%;
   background-color: #222f3d;
   color: white;
-  height: 300px;
+  padding-top:2vh ;
   display: flex;
   justify-content: space-evenly;
 }
 ul{
   margin-top: 10px;
 }
-
+ul p{
+  font-size: 1.4rem;
+  color: white;
+}
 ul a{
   display: block;
   font-size: 0.85rem;
   margin-top: 10px;
-  color: #dddddd;
+  color: #ccc9c9;
 
-}
-.foot-panel3{
-  background-color: #222f3d;
-  color: white;
-  border-top: 0.5px solid white;
-  height: 70px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
 .foot-panel4{
+  height: 20%;
   background-color: #0f1111;
   color: white;
-    font-size: 0.7rem;
+    font-size: 1rem;
   text-align: center;
 /*  display: flex;
   justify-content: center;
   align-items: center;*/
-  height: 80px;
 }
 .pages{
 

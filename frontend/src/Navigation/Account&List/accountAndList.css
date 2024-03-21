@@ -144,13 +144,15 @@
   flex-direction: column;
 
 }
-.account-container-top{
+.account-container-top {
   font-size: 1vw;
-  background-color: #eee;
+  background-color: white;
+  
   padding: 2vh;
   color: rgb(55, 53, 53);
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
+
 
 }
 .account-socialmedia{
@@ -215,5 +217,10 @@
   color: #5b5757;
   display: flex;
   align-items: center;
+}
+.account-list-login{
+   text-decoration: none;
+   color: #5b5757;
+
 }
   
