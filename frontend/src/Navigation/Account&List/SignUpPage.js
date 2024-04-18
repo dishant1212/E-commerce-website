@@ -56,7 +56,7 @@ function SignUpPage() {
         ReEnterPassword: ""
       });
       if(resp.msg=="user created successfull"){
-             navigate("/")
+             navigate("/login")
       }
       
     } else {

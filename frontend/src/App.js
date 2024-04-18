@@ -1,5 +1,5 @@
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom"
-import {useSelector} from "react-redux"
+import { useSelector } from "react-redux"
 import './App.css';
 
 
@@ -39,6 +39,9 @@ import MyAccountPage from "./Navigation/Account&List/MyAccount";
 import AddKidsClothes from "./AdminPanel/addClothes/addKidsClothes";
 import ClothesHomePage from "./Navigation/ShopSwiftly/MyShop/Clothes/clothesHomePage/clothesHomePage";
 import AboutUsPage from "./Navigation/AboutUs/AboutUsPage";
+import Protected from "./ProtectedRoute";
+import ProtecteRoute from "./ProtectedRoute";
+import ProtectedRoute from "./ProtectedRoute";
 
 
 
@@ -46,63 +49,60 @@ import AboutUsPage from "./Navigation/AboutUs/AboutUsPage";
 
 function App() {
 
-  const signInData=useSelector(state=>state.SignInData)
+  const signInData = useSelector(state => state.SignInData)
   console.log(signInData.data)
 
   return (
 
-    <div className="App">
+    <>
 
-     
 
-        <BrowserRouter>
-        <Routes>
-            
-        <Route path="/" element={<Navigation/>}>
-            <Route path="/" exact element={<ShopSwiftlyPage/>} />
-            <Route path="/account" element={<MyAccountPage/>}/>
-            <Route path="/Health-Personal-Care" element={<HealthPersonalCare/>}/>
-            <Route path="/Furniture" element={<Furniture/>} />
-            <Route path="/Beauty-Picks" element={<BeautyPicks/>}/>
-            <Route path="/Pet-Care" element={<PetCare/>}/>
-            <Route path="/Start-your-fitness-journey" element={<StartYourFitnessJourney/>} />
-            <Route path="/Discover-Fashion-Trends" element={<DiscoverFashionTrends/>}/>
-            <Route path="Electronics" element={<Electronics/>}/>
-            <Route path="/Grocery" element={<Grocery/>}/>
-            <Route path="/search" element={<SearchTo/>} />
-            <Route path="/login"  element={<Login/>}/>
-            <Route path="/sign-up" element={<SignUpPage/>}/>
-            <Route path="/cart" element={<Cart/>} />
-            <Route path="/aboutUs" element={<AboutUsPage/>}/>
-            <Route path="/clothes" element={<Clothes/>}>
-              <Route path="/clothes" element={<ClothesHomePage/>}/>
-               <Route path="/clothes/men-clothes" element={<MenClothes/>}/>
-              <Route path="/clothes/women-clothes" element={<WomenClothes/>} />
-              <Route path="/clothes/kids-clothes" element={<KidsClothes/>}/>
-            </Route>
-        </Route> 
-        
-            
 
-        <Route path="/admin-panel" element={<AdminPanel/>}>
-        <Route  path="/admin-panel/add-clothes" element={<AddClothes/>}/>
-        <Route path="/admin-panel/add-clothes-men" element={<AddMenClothes/>}/>
-        <Route path="/admin-panel/add-clothes-women" element={<AddWomenClothes/>}/>
-        <Route path="/admin-panel/add-clothes-kids" element={<AddKidsClothes/>}/>
-        <Route path="/admin-panel/add-electronics" element={<AddElectronics/>}/>
-        <Route  path="/admin-panel/add-health-products" element={<AddHeathProducts/>}/>
-        <Route  path="/admin-panel/add-petcare-products" element={<AddPetCare/>}/> 
-        <Route  path="/admin-panel/add-beautypicks-products" element={<AddBeautyPicks/>}/> 
-        <Route  path="/admin-panel/add-discoverfashion-products" element={<AddDiscoverFashion/>}/>
-        <Route  path="/admin-panel/add-furniture" element={<AddFurniture/>}/>
-        <Route  path="/admin-panel/add-grocery-products" element={<AddGrocery/>}/>
-        <Route  path="/admin-panel/Start-your-fitness-journey" element={<AddFitnessProducts/>}/>
-        </Route>
-        
-    </Routes>
+<BrowserRouter>
+  <Routes>
+    <Route path="/" element={<Navigation />}>
+    <Route index element={<ShopSwiftlyPage />} />
+    <Route path="/account" element={<MyAccountPage />} />
+    <Route path="/login" element={<Login />} />
+    <Route path="/sign-up" element={<SignUpPage />} />
+    <Route path="/cart" element={ <Cart /> }/>
+    <Route path="/aboutUs" element={<AboutUsPage />} />
+
+                <Route path="/Health-Personal-Care" element={<ProtectedRoute> <HealthPersonalCare /> </ProtectedRoute> }/>
+                <Route path="/Furniture" element={  <ProtectedRoute> <Furniture /> </ProtectedRoute> } />
+               <Route path="/Beauty-Picks" element={ <ProtectedRoute>  <BeautyPicks/> </ProtectedRoute>} />
+                <Route path="/Pet-Care" element={<ProtectedRoute><PetCare /></ProtectedRoute>} />
+                <Route path="/Start-your-fitness-journey" element={<ProtectedRoute><StartYourFitnessJourney /></ProtectedRoute>} />
+                <Route path="/Discover-Fashion-Trends" element={<ProtectedRoute><DiscoverFashionTrends /></ProtectedRoute>} />
+                <Route path="/Electronics" element={<ProtectedRoute><Electronics /></ProtectedRoute>} />
+                <Route path="/Grocery" element={<ProtectedRoute><Grocery /></ProtectedRoute>} />
+                <Route path="/clothes" element={<ProtectedRoute><Clothes/></ProtectedRoute>} />
+     </Route>
+
+    
+
+    <Route path="/admin-panel" element={<AdminPanel />}>
+      <Route path="/admin-panel/add-clothes" element={<AddClothes />} />
+      <Route path="/admin-panel/add-clothes-men" element={<AddMenClothes />} />
+      <Route path="/admin-panel/add-clothes-women" element={<AddWomenClothes />} />
+      <Route path="/admin-panel/add-clothes-kids" element={<AddKidsClothes />} />
+      <Route path="/admin-panel/add-electronics" element={<AddElectronics />} />
+      <Route path="/admin-panel/add-health-products" element={<AddHeathProducts />} />
+      <Route path="/admin-panel/add-petcare-products" element={<AddPetCare />} />
+      <Route path="/admin-panel/add-beautypicks-products" element={<AddBeautyPicks />} />
+      <Route path="/admin-panel/add-discoverfashion-products" element={<AddDiscoverFashion />} />
+      <Route path="/admin-panel/add-furniture" element={<AddFurniture />} />
+      <Route path="/admin-panel/add-grocery-products" element={<AddGrocery />} />
+      <Route path="/admin-panel/Start-your-fitness-journey" element={<AddFitnessProducts />} />
+    </Route>
+  </Routes>
 </BrowserRouter>
-    </div>
+     
+    </>
   );
 }
 
 export default App;
+
+
+

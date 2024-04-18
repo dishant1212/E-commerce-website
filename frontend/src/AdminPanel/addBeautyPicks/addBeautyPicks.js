@@ -42,7 +42,7 @@ function AddBeautyPicks() {
   return (
     <div className='products-conatiner' >
       <h2>Add BeautyPicks</h2>
-      <form onSubmit={handleSubmit}>
+      <form >
         <div>
           <label>Image URL:</label><br />
           <input 
@@ -73,8 +73,9 @@ function AddBeautyPicks() {
             required 
           />
         </div>
-        <button  type="submit">Add BeautyPicks</button>
+        
       </form>
+      <button onClick={handleSubmit} >Add BeautyPicks</button>
     </div>
   );
 }

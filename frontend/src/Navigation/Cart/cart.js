@@ -4,6 +4,7 @@ import { useSelector, useDispatch } from "react-redux"
 import { removeItem } from "../../redux/slices/cartSlice"
 import {itemIncress,itemDecress} from "../../redux/slices/cartItemIncressDecress"
 import { useNavigate } from "react-router-dom"
+import { MdDeleteForever } from "react-icons/md";
 
 
 function Cart() {
@@ -52,13 +53,13 @@ function Cart() {
                   return <div className="mainCartSection-item" key={index}>
 
                     <div className="productImg">
-                      <img  src={item.imageUrl} alt="productImage" height={120} width={90} />
+                      <img style={{height:"100%",width:"100%"}} src={item.imageUrl} alt="productImage"  />
                     </div>
 
-
+                 <div className="productInfo">
                     <div className="productName">
                       <div>
-                      {item.name}
+                      {`${item.name.slice(0,120)}...`}
                       </div>
                     </div>
 
@@ -74,13 +75,14 @@ function Cart() {
 
                     </div>
 <div className="removeItem">
-<button className="removeItemBtn"  onClick={() => removeItemHandler(item._id)}>Remove</button>
+<button className="removeItemBtn"  onClick={() => removeItemHandler(item._id)}><MdDeleteForever style={{fontSize:"2.5rem",color:"rgb(224, 36, 36)"}}/></button>
+</div>
 </div>
                   </div>
                 })
               }
             </div>
-         
+          
         </div>
 
         <div className="bottomCartSection">

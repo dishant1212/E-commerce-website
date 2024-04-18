@@ -42,7 +42,7 @@ function AddElectronics() {
   return (
     <div className='products-conatiner' >
       <h2>Add Electronics</h2>
-      <form onSubmit={handleSubmit}>
+      <form >
         <div>
           <label>Image URL:</label><br />
           <input 
@@ -73,8 +73,9 @@ function AddElectronics() {
             required 
           />
         </div>
-        <button type="submit">Add Electronics</button>
+       
       </form>
+      <button onClick={handleSubmit}>Add Electronics</button>
     </div>
   );
 }

@@ -15,14 +15,15 @@ function AddHeathProducts() {
       [name]: value
     }));
   };
-
   const handleSubmit =async (e) => {
+    
     e.preventDefault();
     const {imageUrl,name,price}=formData
      const fetchData=await fetch("http://localhost:5000/healthProducts",{
             method:"POST",
             headers:{
-                "Content-Type":"application/json"
+                "Content-Type":"application/json",
+                
             },
             body:JSON.stringify({imageUrl,name,price})
      })
@@ -42,7 +43,7 @@ function AddHeathProducts() {
   return (
     <div className='products-conatiner' >
       <h2>Add HealthProducts</h2>
-      <form onSubmit={handleSubmit}>
+      <form >
         <div>
           <label>Image URL:</label><br />
           <input 
@@ -73,8 +74,10 @@ function AddHeathProducts() {
             required 
           />
         </div>
-        <button type="submit">Add HealthProducts</button>
-      </form>
+         </form>
+         <div>
+        <button onClick={handleSubmit}>Add HealthProducts</button>
+     </div>
     </div>
   );
 }

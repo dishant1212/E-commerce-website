@@ -10,19 +10,19 @@ function setUser(user){
 
 }
 
-function getUser(token){
+// function getUser(token){
 
-    if(!token)return null;
-    try{
-       return jwt.verify(token,secret)
-    }catch(error){
-        console.log(error)
-    }
+//     if(!token)return null;
+//     try{
+//        return jwt.verify(token,secret)
+//     }catch(error){
+//         console.log(error)
+//     }
    
-}
+// }
 
 
 module.exports={
     setUser,
-    getUser
+ 
 }

@@ -54,7 +54,7 @@
   
 }
 .pagination-conatiner{
-    height: 15vh;
+    height: 10vh;
     width: 100%;
     display: flex;
     justify-content: space-between;
@@ -65,10 +65,11 @@
 .pagination-btn{
     height: 30px;
     width: 100px;
-    background-color: black;
+    background-color: rgb(236, 111, 66);
     color: white;
     border: none;
     margin: 20px;
+    font-size: 1.2rem;
 }
 
 .parent{

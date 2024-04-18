@@ -1,5 +1,5 @@
 const bcrypt=require("bcryptjs")
-const {setUser,getUser}=require("../service/auth")
+const {setUser}=require("../service/auth")
 const User = require("../model/user")
 const Cloth = require("../model/addClothes")
 const Electronic = require("../model/addElectronics")

@@ -42,7 +42,7 @@ function AddDiscoverFashion() {
   return (
     <div className='products-conatiner' >
       <h2>Add DiscoverFashion</h2>
-      <form onSubmit={handleSubmit}>
+      <form >
         <div>
           <label>Image URL:</label><br />
           <input 
@@ -73,8 +73,9 @@ function AddDiscoverFashion() {
             required 
           />
         </div>
-        <button type="submit">Add DiscoverFashion</button>
+       
       </form>
+      <button onClick={handleSubmit}>Add DiscoverFashion</button>
     </div>
   );
 }

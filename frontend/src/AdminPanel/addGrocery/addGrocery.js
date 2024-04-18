@@ -42,7 +42,7 @@ function AddGrocery() {
   return (
     <div className='products-conatiner' >
       <h2>Add Grocery</h2>
-      <form onSubmit={handleSubmit}>
+      <form >
         <div>
           <label>Image URL:</label><br />
           <input 
@@ -73,8 +73,9 @@ function AddGrocery() {
             required 
           />
         </div>
-        <button type="submit">Add Grocery</button>
-      </form>
+        </form>
+        <button onClick={handleSubmit}>Add Grocery</button>
+      
     </div>
   );
 }

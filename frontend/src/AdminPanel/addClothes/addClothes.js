@@ -7,6 +7,8 @@ function AddClothes() {
     name: '',
     price: ''
   });
+   
+  
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -22,13 +24,15 @@ function AddClothes() {
      const fetchData=await fetch("http://localhost:5000/clothes",{
             method:"POST",
             headers:{
-                "Content-Type":"application/json"
+                "Content-Type":"application/json",
+                
             },
             body:JSON.stringify({imageUrl,name,price})
      })
      const resp=await fetchData.json()
      if(resp){
-        alert(resp.msg)
+      alert(resp.msg)
+    
      }else{
         alert(resp.msg)
      }
@@ -42,7 +46,7 @@ function AddClothes() {
   return (
     <div className='products-conatiner' >
       <h2>Add Clothes</h2>
-      <form onSubmit={handleSubmit}>
+      <form>
         <div>
           <label>Image URL:</label><br />
           <input 
@@ -73,8 +77,10 @@ function AddClothes() {
             required 
           />
         </div>
-        <button type="submit">Add Clothes</button>
+        
       </form>
+      <button onClick={handleSubmit}>Add Clothes</button>
+      
     </div>
   );
 }

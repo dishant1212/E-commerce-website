@@ -15,7 +15,6 @@ import {useDispatch,useSelector} from "react-redux";
     Password:""
    })
    const {Email,Password}=state
-   const [Data,setSignInData]=useState()
    const navigate=useNavigate()
    const dispatch=useDispatch()
 
@@ -48,12 +47,16 @@ import {useDispatch,useSelector} from "react-redux";
         }else{
           
          alert( resp.data.msg)
-         setSignInData(resp.data.checkUser)
+       
+         dispatch(signInData(resp.data.checkUser))
+         localStorage.setItem("ShopSwiftlyToken",resp.data.token)  
          setState({
           Email:"",
           Password:""
          })
 
+         navigate("/")
+          
         }
          
       }else{
@@ -66,9 +69,7 @@ import {useDispatch,useSelector} from "react-redux";
 
    }
 
-   useEffect(()=>{
-       dispatch(signInData(Data))
-   },[Data])
+
    
     return(
         <>
@@ -78,9 +79,9 @@ import {useDispatch,useSelector} from "react-redux";
          <p className="signIn-paraStyle">Sign In with your email and password</p>
             <from action="signIn"  >
              <lable className="SigninLabel" >Email</lable><br/>
-             <input className="signInboxInput" type="text" name="Email" onChange={inputHandler} value={Email} /><br/>
+             <input className="signInboxInput" required type="text" name="Email" onChange={inputHandler} value={Email} /><br/>
              <lable className="SigninLabel" >Password</lable><br/>
-             <input className="signInboxInput" type="password" name="Password" onChange={inputHandler} value={Password}/><br/>
+             <input className="signInboxInput" required type="password" name="Password" onChange={inputHandler} value={Password}/><br/>
              <button className="signInboxBtn" onClick={(e)=>ContinueFunc(e)}>Continue</button>
 
              </from>

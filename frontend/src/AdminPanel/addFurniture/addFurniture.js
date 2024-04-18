@@ -42,7 +42,7 @@ function AddFurniture() {
   return (
     <div className='products-conatiner' >
       <h2>Add Furniture</h2>
-      <form onSubmit={handleSubmit}>
+      <form >
         <div>
           <label>Image URL:</label><br />
           <input 
@@ -73,8 +73,9 @@ function AddFurniture() {
             required 
           />
         </div>
-        <button type="submit">Add Furniture</button>
+        
       </form>
+      <button onClick={handleSubmit}>Add Furniture</button>
     </div>
   );
 }

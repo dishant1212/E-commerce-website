@@ -42,7 +42,7 @@ function AddFitnessProducts() {
   return (
     <div className='products-conatiner' >
       <h2>Add FitnessProducts</h2>
-      <form onSubmit={handleSubmit}>
+      <form >
         <div>
           <label>Image URL:</label><br />
           <input 
@@ -73,8 +73,9 @@ function AddFitnessProducts() {
             required 
           />
         </div>
-        <button type="submit">Add FitnessProducts</button>
+        
       </form>
+      <button onClick={handleSubmit}>Add FitnessProducts</button>
     </div>
   );
 }

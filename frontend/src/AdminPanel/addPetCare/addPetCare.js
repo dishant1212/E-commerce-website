@@ -42,7 +42,7 @@ function AddPetCare() {
   return (
     <div className='products-conatiner' >
       <h2>Add PetCare</h2>
-      <form onSubmit={handleSubmit}>
+      <form >
         <div>
           <label>Image URL:</label><br />
           <input 
@@ -73,8 +73,9 @@ function AddPetCare() {
             required 
           />
         </div>
-        <button type="submit">Add PetCare</button>
+       
       </form>
+      <button onClick={handleSubmit}>Add PetCare</button>
     </div>
   );
 }

@@ -42,12 +42,12 @@ function StartYourFitnessJourney(){
             <div className="container-card" key={item.id}>
               <img src={item.imageUrl} alt={item.name} className="cotainer-card-Image" />
               <div className="container-cart-Details">
-                <h3 className="container-cart-Details-headding">{item.name}</h3>
+                <h3 className="container-cart-Details-headding">{`${item.name.slice(1,70)}...`}</h3>
                 <p  className="container-cart-Details-para">Price: ${item.price}</p>
                
               </div>
               <button className="container-addToCart-addBtn" onClick={() => addToCart(item)}>Add to Cart</button>
-              <button className="container-addToCart-buyBtn" onClick={proccedToBuyHandler}>Buy</button>
+             
             </div>
           ))}
         </div>

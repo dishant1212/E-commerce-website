@@ -12,8 +12,9 @@
   }
   
   .signIn-headdingStyle {
-    font-size: 24px;
+    font-size: 19px;
     margin-bottom: 10px;
+    font-weight: bold;
   }
   
   .signIn-paraStyle {
@@ -36,7 +37,7 @@
   .signInboxBtn {
     width: 100%;
     padding: 10px;
-    background-color: #007bff;
+    background-color: rgb(236, 111, 66);
     color: #fff;
     border: none;
     border-radius: 4px;
@@ -54,13 +55,14 @@
     margin-top: 20px;
   }
   .createAccountbtnbox-text{
-      color: black;
+      color: rgb(49, 48, 48);
       font-size: 1.2rem;
-      font-weight: 500;
+      font-weight: 600;
+      
 
   }
   .createAccountbtnbox-link{
-    color: #007bff;
+    color: rgb(236, 111, 66);
     text-decoration: none;
 
   }
@@ -89,6 +91,9 @@
   .createAccountboxHadding {
     font-size: 24px;
     margin-bottom: 20px;
+    font-weight: 700;
+    color: rgb(45, 44, 44);
+
   }
   
   .createAccountbox2Label {
@@ -106,7 +111,7 @@
   .createAccountbox2Btn {
     width: 100%;
     padding: 10px;
-    background-color: #007bff;
+    background-color: rgb(236, 111, 66);
     color: #fff;
     border: none;
     border-radius: 4px;
@@ -114,15 +119,17 @@
   }
   
   .createAccountboxPra {
-    font-size: 14px;
+    font-size: 16px;
     margin-top: 10px;
     text-align: center;
+      color: rgb(45, 44, 44);
+      font-weight: bold;
   }
   
   .createAccountboxPraBtn {
     background: none;
     border: none;
-    color: #007bff;
+    color: rgb(236, 111, 66);
     cursor: pointer;
     text-decoration: none;
 
@@ -145,13 +152,15 @@
 
 }
 .account-container-top {
-  font-size: 1vw;
+  font-size: 2rem;
   background-color: white;
   
   padding: 2vh;
   color: rgb(55, 53, 53);
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 500;
 
 
 }
@@ -168,31 +177,42 @@
    display: flex;
 }
 .account-sidebar{
-  height: 70vh;
-  width: 22vw;
-  border: 2px solid #eee;
+  display: none;
   
+}
+.account-mobile-sidebar{
+   height:80%;
+  width: 50%;
+  border: 2px solid #eee;
   display: flex;
   flex-direction: column;
-  
+ 
+  position: fixed;
+  z-index: 1;
+  background-color: #eee;
+  opacity: 0.4;
+  color: black;
 
-}
+  
+} 
 .account-list{
-  height: 15vh;
+  height: 10.7vh;
   width:100% ;
-  color: #7e7a7a;
+  color: black;
   border: 2px solid #eee;
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 1vw;
-  font-weight:600;
+  font-size: 1rem;
+  font-weight:1000;
   cursor: pointer;
+  text-align: center;
   
 }
 .account-info{
   height: 70vh;
-  width: calc(100% - 22vw);
+  /* width: calc(100% - 22vw); */
+  width: 100%;
   border: 2px solid #eee;
 }
 .accInfo-accountDetails{
@@ -217,10 +237,67 @@
   color: #5b5757;
   display: flex;
   align-items: center;
+  font-weight: bolder;
 }
 .account-list-login{
    text-decoration: none;
    color: #5b5757;
 
 }
+.accountDetails-list-headding{
+   font-size: 25px;
+   font-weight: bold;
+}
+@media (min-width: 768px) {
+
+  .signIn-headdingStyle {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  .createAccountboxHadding {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  .createAccountboxPra {
+    font-size: 20px;
+    margin-top: 10px;
+    text-align: center;
+     
+  }
+  .account-info{
+    height: 70vh;
+  width: calc(100% - 22vw);
+   
+    border: 2px solid #eee;
+  }
+  .account-sidebar{
+    height: 70vh;
+    width: 22vw;
+    border: 2px solid #eee;
+    display: flex;
+    flex-direction: column;
+   
+   
+  }
+  .account-mobile-sidebar{
+   
+   display: none;
   
+   
+   
+ }
+ .account-list{
+  height: 10.7vh;
+  width:100% ;
+  color: rgb(55, 54, 54);
+  border: 2px solid #eee;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1rem;
+  font-weight:1000;
+  cursor: pointer;
+  text-align: center;
+  
+}
+ }
